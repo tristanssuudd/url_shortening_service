@@ -1,6 +1,7 @@
 const {Client, Pool} = require('pg');
 const nid = require('nanoid');
 const express = require('express');
+require('dotenv').config();
 
 const app = express();
 app.use(express.json());
@@ -8,11 +9,11 @@ app.use(express.json());
 const dbpassword = 'AsaMitakabeloved';
 
 const pool = new Pool({
-    host:'localhost',
-    user:'postgres',
-    port:5432,
-    password: dbpassword,
-    database:'shorturl',
+    host:process.env.DB_HOST,
+    user:process.env.DB_USER,
+    port:Number(process.env.DB_PORT),
+    password: process.env.DB_PASSWORD,
+    database:process.env.DB_NAME,
     max: 10,
     connectionTimeoutMillis: 5000,
     idleTimeoutMillis: 5000,
