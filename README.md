@@ -4,6 +4,7 @@ simple URL shortening API made with Node.Js and Express.js, and a PostgreSQL ser
 example:
   `http://localhost:8080/shorten/0bg2QLZ19p2l7ombHQmYy`
 
+made as a submission to https://roadmap.sh/projects/url-shortening-service
 
 Features
 ---
